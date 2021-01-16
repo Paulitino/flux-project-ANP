@@ -1,4 +1,4 @@
-# Flux project
+# Flux project https://github.com/Paulitino/flux-projet-ANP/workflows/Node.js/badge.svg
 
 
 ###### Explaination of the *docker containter run/exec* flags
