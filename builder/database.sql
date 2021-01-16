@@ -1,0 +1,20 @@
+CREATE TABLE FLUX(
+      ID                SERIAL
+    , NAME              VARCHAR(256)
+    , URL               VARCHAR(256)   NOT NULL
+    , PRIMARY KEY (ID)
+);
+
+CREATE TABLE FLUXITEMS(
+      FLUX            INTEGER        REFERENCES FLUX(ID)
+    , TITLE           VARCHAR(256)
+    , LINK            VARCHAR(256)
+    , DESCRIPTION     VARCHAR(256)
+    , PUBLICATION     TIMESTAMP
+    , GUID            VARCHAR(256)
+    , ISODATE         TIMESTAMP
+    , LOVE            BOOLEAN        NOT NULL DEFAULT 'FALSE'
+    , DELETED         BOOLEAN        NOT NULL DEFAULT 'FALSE'
+);
+
+CREATE INDEX ITEMS_IDX ON FLUXITEMS (DELETED);

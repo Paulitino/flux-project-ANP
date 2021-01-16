@@ -1,0 +1,31 @@
+------*** DONE ***------
+
++ Garder la partie postgreSQL - DONE
++ Tout réinstaller - DONE
++ Installer et faire README pour la partie BackEnd avec NodeJS API - DONE
++ Rediriger le port du server node dans le docker vers un port adéquat dans windows A EXPLIQUER DANS LE README - DONE
++ Connecter API à back end - DONE
++ Installer le packet yaml pour créer des fichiers de configuration en yaml ou peut-être json - DONE
+
+------*** TODO ***------
+
++ décider du design des != pages (infos/UX)
++ mettre à jour les items d'un flux
++ afficher les items d'un flux
++ ajouter un flux
++ supprimer un flux
++ liste favoris
++ liste supprimés
++ Bien établir un modèle de données, Avoir une bonne API Sécure / Accessibilité des données faciles et sécure / Générique (transfert de données sans avoir à connaître sa forme)
+
++ Installer et faire README pour la partie FrontEnd avec NODEJS ReactApp
++ Versionner les API et en suivant tuto ex: 
+-> https://restfulapi.net/rest-api-design-tutorial-with-example/
+-> https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/
++ UX: Choisir les différentes vues à faire et leurs accessibilités et leurs contenus en données (Javascript)
++ UI: Disposition de chacunes des vues (css/HTML)
+
++ Expliquer le projet, d'où il vient, le principe comment et en quoi ça peut m'améliorer
++ Voir un peu plus pour docker compose et expliquer pourquoi je ne le prends pas
+-> https://docs.docker.com/compose/gettingstarted/
++ Mettre les sources dans un chemin plus accessible pour que tout le monde puisse tout installer facilement

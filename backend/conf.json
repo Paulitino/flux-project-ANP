@@ -1,0 +1,10 @@
+{
+    "database": {
+        "postgres": {
+            "user":     "postgres",
+            "name":     "flux",
+            "password": "root",
+            "port":      5432
+        }
+    }
+}
