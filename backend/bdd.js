@@ -27,25 +27,24 @@ module.exports = {
         });
     },
 
-    getAllFlux: function() {
+    getAllFlux: function(done) {
         client.query('SELECT * FROM flux', (err, res) => {
             console.log("flux", res.rows[0]);
-            return(res.rows[0]);
+            done(res.rows[0]);
         });
     },
 
-    getLastItemFromAFlux: function(fluxUrl) {
-        client.query('SELECT DISTINCT ON ("title") * from fluxitems WHERE link=%(fluxUrl)s ORDER BY isodate DESC LIMIT 1', fluxUrl, (err, res) => {
+    getLastItemFromAFlux: function(variables, done) {
+        client.query('SELECT * from fluxitems WHERE link = $1 ORDER BY isodate DESC LIMIT 1', [variables], (err, res) => {
             if (err) {
-                console.log("sending back a 500 error")
-                res.status(500).send({error: "error in getLastItemFromAFlux"});
+                console.log("sending back a 500 error");
+                done({error: "error in getLastItemFromAFlux"});
             } else {
                 console.log("getLastItemFromAFlux req = ", res.rows[0]);
-                res.status(200).send({body: res.rows[0]});
+                done({body: res.rows[0]});
             }
         });
     }
-
 }
 
 /* module.exports = {

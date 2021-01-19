@@ -8,7 +8,7 @@
 + Installer le packet yaml pour créer des fichiers de configuration en yaml ou peut-être json - DONE
 
 ------*** TODO ***------
-
++ voir comment comparer 2 dates
 + décider du design des != pages (infos/UX)
 + mettre à jour les items d'un flux
 + afficher les items d'un flux

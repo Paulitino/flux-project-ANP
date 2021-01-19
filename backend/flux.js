@@ -56,18 +56,24 @@ let parser = new Parser();
 (async () => {
 
     let feed = await parser.parseURL('http://www.jeuxvideo.com/rss/rss.xml');
-    console.log(feed.title);
+    let len = feed.items.length;
   
     feed.items.forEach(item => {
-      console.log(item.title + ':' + item.link + '_____' + item.content, item.pubDate, item.guid, item.isoDate, '\n');
+      console.log("title : ", item.title , '\n' + 'link = ' + item.link , '\n' + 'content = ' + item.content, '\n', "pubDate = ", item.pubDate, '\n', "guid : ", item.guid, '\n', "isoDate = ", item.isoDate, '\n');
     });
+    let latestItem = feed.items[len - 1];
 
     db.getLastItemFromAFlux('http://www.jeuxvideo.com/rss/rss.xml', (res) => {
-        if (res.status == 500) {
+        if (res.error) {
             console.log("there has been an error");
         } else {
             console.log("res = ", res);
-
+            console.log("latestItem", latestItem);
+            if (res.body.pubDate > latestItem.pubDate && res.body.title != latestItem.title) {
+                console.log("New fluxitem to insert")
+            } else {
+                console.log("Nothing to insert");
+            }
         }
     });
   
