@@ -67,17 +67,30 @@ let parser = new Parser();
         if (res.error) {
             console.log("there has been an error");
         } else {
-            console.log("res = ", res);
-            console.log("latestItem", latestItem);
-            if (res.body.pubDate > latestItem.pubDate && res.body.title != latestItem.title) {
-                console.log("New fluxitem to insert")
+            var resPubDate = new Date(res.body.publication);
+            var lastItemPubDate = new Date(latestItem.pubDate);
+
+            if (resPubDate < lastItemPubDate && res.body.title != latestItem.title) {
+                console.log("New fluxitem to insert");
+                let variables = {
+                    flux: 1,
+                    title: latestItem.title,
+                    link: 'http://www.jeuxvideo.com/rss/rss.xml',
+                    description: latestItem.content.substring(0, 150),
+                    publication: latestItem.pubDate,
+                    guid: latestItem.guid,
+                    isodate: latestItem.isoDate,
+                };
+                console.log("variables = ", variables)
+                db.insertFluxItem(variables, (res) => {
+                    console.log("res from insertFluxItem = ", res);
+                });
             } else {
                 console.log("Nothing to insert");
             }
         }
     });
-  
-  })();
+})();
 
 /* function call() {
 
