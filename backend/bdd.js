@@ -16,13 +16,19 @@ module.exports = {
     try: function() {
         client.query('SELECT NOW()', (err, res) => {
             console.log(err, res);
-            client.end();
         });
     },
 
     getAllFlux: function(done) {
         client.query('SELECT * FROM flux', (err, res) => {
             console.log("flux", res.rows[0]);
+            done(res.rows[0]);
+        });
+    },
+
+    getAllFluxItems: function(done) {
+        client.query('SELECT * FROM fluxitems', (err, res) => {
+            console.log("fluxitems", res.rows[0]);
             done(res.rows[0]);
         });
     },
