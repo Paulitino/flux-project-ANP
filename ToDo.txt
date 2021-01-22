@@ -6,11 +6,12 @@
 + Rediriger le port du server node dans le docker vers un port adéquat dans windows A EXPLIQUER DANS LE README - DONE
 + Connecter API à back end - DONE
 + Installer le packet yaml pour créer des fichiers de configuration en yaml ou peut-être json - DONE
++ voir comment comparer 2 dates - DONE
++ mettre à jour les items d'un flux - DONE
++ queries et conf dans json à part - DONE
 
 ------*** TODO ***------
-+ voir comment comparer 2 dates
 + décider du design des != pages (infos/UX)
-+ mettre à jour les items d'un flux
 + afficher les items d'un flux
 + ajouter un flux
 + supprimer un flux
@@ -18,6 +19,7 @@
 + liste supprimés
 + Bien établir un modèle de données, Avoir une bonne API Sécure / Accessibilité des données faciles et sécure / Générique (transfert de données sans avoir à connaître sa forme)
 
++ Lister en haut toutes les compétences apprises grâce à ce projet
 + Installer et faire README pour la partie FrontEnd avec NODEJS ReactApp
 + Versionner les API et en suivant tuto ex: 
 -> https://restfulapi.net/rest-api-design-tutorial-with-example/

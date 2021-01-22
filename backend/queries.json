@@ -1,0 +1,7 @@
+{
+    "try": "SELECT NOW()",
+    "getAllFlux": "SELECT * FROM flux",
+    "getAllFluxItems": "SELECT * FROM fluxitems",
+    "getLastItemFromAFlux": "SELECT * from fluxitems WHERE link = $1 ORDER BY isodate DESC LIMIT 1",
+    "insertFluxItem": "INSERT INTO fluxitems (flux, title, link, description, publication, guid, isodate) VALUES (:flux, :title, :link, :description, :publication, :guid, :isodate)"
+}

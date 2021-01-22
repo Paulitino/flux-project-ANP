@@ -1,6 +1,7 @@
 const { Pool, Client } = require('pg');
 const named = require('yesql').pg;
 const conf = require("./conf.json");
+const query = require("./queries.json");
 
 const client = new Pool({
     user:     "postgres",
@@ -14,27 +15,26 @@ client.connect();
 module.exports = {
     
     try: function() {
-        client.query('SELECT NOW()', (err, res) => {
-            console.log(err, res);
+        client.query(query.try, (err, res) => {
         });
     },
 
     getAllFlux: function(done) {
-        client.query('SELECT * FROM flux', (err, res) => {
+        client.query(query.getAllFlux, (err, res) => {
             console.log("flux", res.rows[0]);
             done(res.rows[0]);
         });
     },
 
     getAllFluxItems: function(done) {
-        client.query('SELECT * FROM fluxitems', (err, res) => {
+        client.query(query.getAllFluxItems, (err, res) => {
             console.log("fluxitems", res.rows[0]);
             done(res.rows[0]);
         });
     },
 
     getLastItemFromAFlux: function(variables, done) {
-        client.query('SELECT * from fluxitems WHERE link = $1 ORDER BY isodate DESC LIMIT 1', [variables], (err, res) => {
+        client.query(query.getLastItemFromAFlux, [variables], (err, res) => {
             if (err) {
                 console.log("error in getLastItemFromAFlux");
                 done({error: "error in getLastItemFromAFlux"});
@@ -47,7 +47,7 @@ module.exports = {
 
     insertFluxItem: function(variables, done) {
         console.log("in insertFluxItem = ", variables);
-        client.query(named('INSERT INTO fluxitems (flux, title, link, description, publication, guid, isodate) VALUES (:flux, :title, :link, :description, :publication, :guid, :isodate)')(variables), (err, res) => {
+        client.query(named(query.insertFluxItem)(variables), (err, res) => {
             if (err) {
                 console.log("error in insertFluxItem", err);
                 done({error: "error in insertFluxItem"});

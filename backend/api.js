@@ -4,7 +4,7 @@ const cors = require('cors');
 const db = require('./bdd');
 const expressHandlebars = require('express-handlebars');
 
-app.set('views', '../views');
+app.set('views', 'views');
 
 app.engine('hbs', expressHandlebars({
     defaultLayout: 'main.hbs',
