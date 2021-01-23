@@ -10,20 +10,27 @@ app.engine('hbs', expressHandlebars({
     defaultLayout: 'main.hbs',
 }));
 
-app.get('/', function(req, res) {
+app.get('/', function(request, response) {
     db.try();
-    res.render("home.hbs")
+    response.render("home.hbs")
 });
 
-app.get('/flux', function(req, res) {
-    db.getAllFlux(function(res) {
-        console.log(res);
+app.get('/flux', function(request, response) {
+    db.getAllFlux(function(done) {
+        console.log(done);
     });
 });
 
-app.get('/items', function(req, res) {
-    db.getAllFluxItems(function(res) {
-        console.log(res);
+app.get('/items', function(request, response) {
+    db.getAllFluxItems(function(done) {
+        if (done == "error") {
+            response.status(500).end();
+        } else {
+            const model = {
+                items: done
+            }
+            response.status(200).render("items.hbs", model);
+        }
     });
 });
 

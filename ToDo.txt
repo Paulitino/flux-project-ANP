@@ -11,14 +11,20 @@
 + queries et conf dans json à part - DONE
 
 ------*** TODO ***------
-+ décider du design des != pages (infos/UX)
+
++ table users BDD
++ page de connexion
++ page inscription
++ page de profil
 + afficher les items d'un flux
 + ajouter un flux
 + supprimer un flux
 + liste favoris
 + liste supprimés
++ flux.js générique
 + Bien établir un modèle de données, Avoir une bonne API Sécure / Accessibilité des données faciles et sécure / Générique (transfert de données sans avoir à connaître sa forme)
 
++ décider du design des != pages (infos/UX)
 + Lister en haut toutes les compétences apprises grâce à ce projet
 + Installer et faire README pour la partie FrontEnd avec NODEJS ReactApp
 + Versionner les API et en suivant tuto ex: 

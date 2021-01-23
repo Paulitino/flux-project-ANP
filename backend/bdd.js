@@ -28,8 +28,12 @@ module.exports = {
 
     getAllFluxItems: function(done) {
         client.query(query.getAllFluxItems, (err, res) => {
-            console.log("fluxitems", res.rows[0]);
-            done(res.rows[0]);
+            if (err) {
+                console.log("error in getAllFluxItems");
+                done({error: "error in getAllFluxItems"});
+            } else {
+                done(res.rows);
+            }
         });
     },
 
