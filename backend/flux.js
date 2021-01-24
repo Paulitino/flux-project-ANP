@@ -1,18 +1,7 @@
 const db = require('./bdd');
 const Parser = require('rss-parser');
 
-/* app.get('/addAFlux', function (req, res) {
-    console.log("addAFlux");
-    db.addAFluxRequest(req.body.newFlux, function (response) {
-        if (response == "error") {
-            res.status(400);
-        } else {
-            res.status(200);
-        }
-    });
-});
-
-app.post('/deleteItemById', function (req, res) {
+/* app.post('/deleteItemById', function (req, res) {
     console.log("deleteItemById");
     console.log("req.body.id", req.body.fluxItem);
 
