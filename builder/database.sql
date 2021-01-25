@@ -1,20 +1,45 @@
+CREATE TABLE ACCOUNTS(
+    ID                    SERIAL
+  , FIRSTNAME             VARCHAR(256)  NOT NULL
+  , LASTNAME              VARCHAR(256)  NOT NULL
+  , BIRTHDATE             TIMESTAMP
+  , COMPANY               VARCHAR(256)
+  , COUNTRY               VARCHAR(256)
+  , PRIMARY KEY (ID)
+);
+
 CREATE TABLE FLUX(
-      ID                SERIAL
-    , NAME              VARCHAR(256)
-    , URL               VARCHAR(256)   NOT NULL
-    , PRIMARY KEY (ID)
+    ID                SERIAL
+  , NAME              VARCHAR(256)
+  , URL               VARCHAR(256)   NOT NULL
+  , PRIMARY KEY (ID)
 );
 
 CREATE TABLE FLUXITEMS(
-      FLUX            INTEGER        REFERENCES FLUX(ID)
-    , TITLE           VARCHAR(256)
-    , LINK            VARCHAR(256)
-    , DESCRIPTION     VARCHAR(256)
-    , PUBLICATION     TIMESTAMP
-    , GUID            VARCHAR(256)
-    , ISODATE         TIMESTAMP
-    , LOVE            BOOLEAN        NOT NULL DEFAULT 'FALSE'
-    , DELETED         BOOLEAN        NOT NULL DEFAULT 'FALSE'
+    ID              SERIAL
+  , FLUX            INTEGER         REFERENCES FLUX(ID)
+  , TITLE           VARCHAR(256)
+  , LINK            VARCHAR(256)
+  , DESCRIPTION     VARCHAR(256)
+  , PUBLICATION     TIMESTAMP
+  , GUID            VARCHAR(256)
+  , ISODATE         TIMESTAMP
+  , PRIMARY KEY (ID)
 );
 
-CREATE INDEX ITEMS_IDX ON FLUXITEMS (DELETED);
+CREATE TABLE SUBSCRIPTIONS(
+    ID              SERIAL
+  , ACCOUNT         INTEGER           REFERENCES ACCOUNTS(ID)
+  , FLUX            INTEGER           REFERENCES FLUX(ID)
+  , PRIMARY KEY (ID)
+);
+
+CREATE TABLE FAVORITE(
+    ACCOUNT           INTEGER         REFERENCES ACCOUNTS(ID)
+  , FLUXITEM          INTEGER         REFERENCES FLUXITEMS(ID)
+);
+
+CREATE TABLE DELETED(
+    ACCOUNT           INTEGER         REFERENCES ACCOUNTS(ID)
+  , FLUXITEM          INTEGER         REFERENCES FLUXITEMS(ID)
+);
