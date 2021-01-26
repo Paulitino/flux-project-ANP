@@ -43,8 +43,13 @@ module.exports = {
                 console.log("error in getLastItemFromAFlux");
                 done({error: "error in getLastItemFromAFlux"});
             } else {
-                console.log("getLastItemFromAFlux req = ", res.rows[0]);
-                done({body: res.rows[0]});
+                console.log("getLastItemFromAFlux req = ", res.rows.length);
+                if (res.rows.length == 0) {
+                    console.log("204")
+                    done({status: 204});
+                } else {
+                    done({status: 200, body: res.rows[0]});
+                }
             }
         });
     },
