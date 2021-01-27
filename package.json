@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node backend/api.js",
-    "test": "echo test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -36,5 +36,10 @@
     "pg": "^8.5.1",
     "rss-parser": "^3.10.0",
     "yesql": "^5.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1"
   }
 }

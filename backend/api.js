@@ -12,7 +12,7 @@ app.engine('hbs', expressHandlebars({
 
 app.get('/', function(request, response) {
     db.try();
-    response.render("home.hbs")
+    response.status(200).render("home.hbs");
 });
 
 app.get('/flux', function(request, response) {
@@ -37,3 +37,5 @@ app.get('/items', function(request, response) {
 app.listen(port=80, hostname='0.0.0.0', () => {
     console.log(`Server running on port :${port}/`);
 });
+
+module.exports = app;
