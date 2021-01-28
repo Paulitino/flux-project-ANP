@@ -19,13 +19,8 @@ describe("Server!", () => {
       .request(app)
       .get("/items")
       .end((err, res) => {
-        if (err) {
-          expect(err).to.have.status(500);
-          done();
-        } else {
           expect(res).to.have.status(200);
           done();
-        }
       });
   });
   it("Getting all flux", done => {
@@ -33,13 +28,8 @@ describe("Server!", () => {
       .request(app)
       .get("/flux")
       .end((err, res) => {
-        if (err) {
-          expect(err).to.have.status(500);
-          done();
-        } else {
           expect(res).to.have.status(200);
           done();
-        }
       });
   });
 });
