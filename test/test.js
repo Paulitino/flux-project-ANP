@@ -18,18 +18,26 @@ describe("Server!", () => {
     chai
       .request(app)
       .get("/items")
-      .end((err, res) => {
+      .then(function (res) {
           expect(res).to.have.status(200);
           done();
-      });
+      })
+      .catch(function (err) {
+        expect(res).to.have.status(500);
+        throw err;
+     });
   });
   it("Getting all flux", done => {
     chai
       .request(app)
       .get("/flux")
-      .end((err, res) => {
+      .then(function (res) {
           expect(res).to.have.status(200);
           done();
-      });
+      })
+      .catch(function (err) {
+        expect(res).to.have.status(500);
+        throw err;
+     });
   });
 });
