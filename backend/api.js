@@ -34,7 +34,7 @@ app.get('/items', function(request, response) {
     });
 });
 
-app.listen(port=80, hostname='0.0.0.0', () => {
+app.listen(port=1040, hostname='0.0.0.0', () => {
     console.log(`Server running on port :${port}/`);
 });
 

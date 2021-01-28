@@ -54,7 +54,7 @@ docker pull node:14.8.0-alpine3.11
 ```
 Creates the container connects it to the network, gives it a connection to the volume and redirects its port 80 (container) to the port 3000 (host) of the host 
 ```
-docker container run --name fluxAPI -d -t -p 3000:80 --network network-flux-project-anp --mount type=bind,source=C:\Users\paulf\Work\flux-project\flux-project-api,target=/app node:14.8.0-alpine3.11
+docker container run --name fluxAPI -d -t -p 3000:1040 --network network-flux-project-anp --mount type=bind,source=C:\Users\paulf\Work\flux-project\flux-project-api,target=/app node:14.8.0-alpine3.11
 ```
 > You have to redirect the port of the container to a port of the host and asign a local IP adress because for the host the container isn't localhost
 Launches the container
