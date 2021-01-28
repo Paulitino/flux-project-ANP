@@ -1,0 +1,25 @@
+{{#if flux.length}}
+    <div style="height: 100%; width: 50%; float: right; z-index: 1; overflow: hidden; padding-top: 50px; right:0">
+    <h2 style="margin: auto; text-align: center">Flux</h2>
+    {{#each flux}}
+        <div style="border: 1px solid black; margin: auto; text-align: center; width: 50%">
+            <p>{{ name }}</p>
+            <p>{{ url }}</p>
+        </div>
+        <br>
+    {{/each}}
+    </div>
+{{else if flux.length}}
+    <div style="height: 100%; width: 50%; float: right; z-index: 1; overflow: hidden; padding-top: 50px; right:0">
+    <h2 style="margin: auto; text-align: center">Flux</h2>
+    {{#each flux}}
+        <div style="border: 1px solid black; margin: auto; text-align: center; width: 50%">
+            <p>{{ name }}</p>
+            <p>{{ url }}</p>
+        </div>
+        <br>
+    {{/each}}
+    </div>
+{{else}}
+<p>There is no flux</p>
+{{/if}}

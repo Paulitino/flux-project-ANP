@@ -21,8 +21,12 @@ module.exports = {
 
     getAllFlux: function(done) {
         client.query(query.getAllFlux, (err, res) => {
-            console.log("flux", res.rows[0]);
-            done(res.rows[0]);
+            if (err) {
+                console.log("error in getAllFlux");
+                done({error: "error in getAllFlux"});
+            } else {
+                done({status: 200, body: res.rows});
+            }
         });
     },
 
@@ -32,7 +36,7 @@ module.exports = {
                 console.log("error in getAllFluxItems");
                 done({error: "error in getAllFluxItems"});
             } else {
-                done(res.rows);
+                done({status: 200, body: res.rows});
             }
         });
     },
