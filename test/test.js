@@ -25,6 +25,7 @@ describe("Server!", () => {
       .catch(function (err) {
         expect(res).to.have.status(500);
         throw err;
+        done();
      });
   });
   it("Getting all flux", done => {
@@ -38,6 +39,7 @@ describe("Server!", () => {
       .catch(function (err) {
         expect(res).to.have.status(500);
         throw err;
+        done();
      });
   });
 });
