@@ -17,7 +17,7 @@ app.get('/', function(request, response) {
 
 app.get('/flux', function(request, response) {
     db.getAllFlux(function(done) {
-        if (done.error) {
+        if (done == "error") {
             response.status(500);
         } else {
             const model = {
@@ -30,14 +30,14 @@ app.get('/flux', function(request, response) {
 
 app.get('/items', function(request, response) {
     db.getAllFluxItems(function(done) {
-        /* if (done.error) {
+        if (done == "error") {
             response.status(500);
-        } else { */
+        } else {
             const model = {
                 items: done.body
             }
             response.status(200).render("items.hbs", model);
-        //}
+        }
     });
 });
 

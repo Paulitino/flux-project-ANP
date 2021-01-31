@@ -23,7 +23,7 @@ module.exports = {
         client.query(query.getAllFlux, (err, res) => {
             if (err) {
                 console.log("error in getAllFlux");
-                done({error: "error in getAllFlux"});
+                done("error");
             } else {
                 done({status: 200, body: res.rows});
             }
@@ -33,8 +33,8 @@ module.exports = {
     getAllFluxItems: function(done) {
         client.query(query.getAllFluxItems, (err, res) => {
             if (err) {
-                console.log("error in getAllFluxItems");
-                done({error: "error in getAllFluxItems"});
+                console.log("error");
+                done("error");
             } else {
                 done({status: 200, body: res.rows});
             }
@@ -45,7 +45,7 @@ module.exports = {
         client.query(query.getLastItemFromAFlux, [variables], (err, res) => {
             if (err) {
                 console.log("error in getLastItemFromAFlux");
-                done({error: "error in getLastItemFromAFlux"});
+                done("error");
             } else {
                 console.log("getLastItemFromAFlux req = ", res.rows.length);
                 if (res.rows.length == 0) {
@@ -63,7 +63,7 @@ module.exports = {
         client.query(named(query.insertFluxItem)(variables), (err, res) => {
             if (err) {
                 console.log("error in insertFluxItem", err);
-                done({error: "error in insertFluxItem"});
+                done("error");
             } else {
                 done({body: "ok"});
             }
