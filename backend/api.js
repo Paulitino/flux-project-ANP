@@ -41,6 +41,18 @@ app.get('/items', function(request, response) {
     });
 });
 
+app.get('/subscribe', function(request, response) {
+    const model = {
+       firstName: "",
+       lastName: "",
+       date: "",
+       company: "",
+       country: ""
+    };
+
+    response.status(200).render("subscribe.hbs", model);
+});
+
 app.listen(port=1040, hostname='0.0.0.0', () => {
     console.log(`Server running on port :${port}/`);
 });
