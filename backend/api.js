@@ -57,6 +57,7 @@ app.get('/subscribe', function(request, response) {
 });
 
 app.post('/subscribe', function(request, response) {
+    console.log("request", request.body);
     const firstName = request.body.firstName;
     const lastName = request.body.lastName;
     const password = request.body.password;
