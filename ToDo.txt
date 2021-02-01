@@ -9,10 +9,10 @@
 + voir comment comparer 2 dates - DONE
 + mettre à jour les items d'un flux - DONE
 + queries et conf dans json à part - DONE
++ table users BDD - DONE
 
 ------*** TODO ***------
 
-+ table users BDD
 + page de connexion
 + page inscription
 + page de profil
