@@ -10,13 +10,13 @@
 + mettre à jour les items d'un flux - DONE
 + queries et conf dans json à part - DONE
 + table users BDD - DONE
++ afficher les items d'un flux - DONE
 
 ------*** TODO ***------
 
 + page de connexion
 + page inscription
 + page de profil
-+ afficher les items d'un flux
 + ajouter un flux
 + supprimer un flux
 + liste favoris
