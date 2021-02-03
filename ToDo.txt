@@ -15,7 +15,7 @@
 ------*** TODO ***------
 
 + page de connexion
-+ page inscription
++ page inscription en cours
 + page de profil
 + ajouter un flux
 + supprimer un flux
