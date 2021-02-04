@@ -1,17 +1,19 @@
 const express = require('express');
 const app = express();
+const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const db = require('./bdd');
 const expressHandlebars = require('express-handlebars');
+const saltRounds = 10;
+var session = require('express-session');
 
 app.set('views', 'views');
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(session({secret: "chocapic", resave: false, saveUninitialized: true}));
 
-app.engine('hbs', expressHandlebars({
-    defaultLayout: 'main.hbs',
-}));
+app.engine('hbs', expressHandlebars({defaultLayout: 'main.hbs',}));
 
 app.get('/', function(request, response) {
     db.try();
@@ -91,7 +93,49 @@ app.post('/subscribe', function(request, response) {
 
         response.render("subscribe.hbs", model)
     } else {
-
+        const user = {
+            firstName: firstName,
+            lastName: lastName
+        };
+        db.getAccount(user, function(done) {
+            console.log("getAccountAPI   ", done, done.body.length)
+            if (done.body.length != 0) {
+                errors = ["username already exists"]
+                const model = {
+                    errors: errors,
+                    firstName: firstName,
+                    lastName: lastName,
+                    birthday: birthday,
+                    company: company,
+                    country: country
+                }
+    
+                response.render("subscribe.hbs", model)
+            } else if (done.body.length == 0) {
+                bcrypt.hash(password, saltRounds, function(err, hash) {
+                    if (err) {
+                        response.redirect("/accounts/subscribe")
+                    } else {
+        
+                        const hashpw = hash;
+                        const model = {
+                            firstName: firstName,
+                            lastName: lastName,
+                            birthday: birthday,
+                            company: company,
+                            country: country
+                        }
+                        db.insertAccount(model, function(done) {
+                            if (done == "error") {
+                                response.status(500).end()
+                            } else {
+                                response.redirect("/login")
+                            }
+                        });
+                    }
+                });
+            }
+        });
     }
 });
 

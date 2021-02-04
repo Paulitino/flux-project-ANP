@@ -19,6 +19,18 @@ module.exports = {
         });
     },
 
+    getAccount: function(variables, done) {
+        console.log("variables ", variables)
+        client.query(named(query.getAccount)(variables), (err, res) => {
+            if (err) {
+                console.log("error in getAccount");
+                done("error");
+            } else {
+                done({status: 200, body: res.rows});
+            }
+        });
+    },
+
     getAllFlux: function(done) {
         client.query(query.getAllFlux, (err, res) => {
             if (err) {
@@ -69,4 +81,16 @@ module.exports = {
             }
         });
     },
+
+    insertAccount: function(variables, done) {
+        console.log("in insertAccount = ", variables);
+        client.query(named(query.insertAccount)(variables), (err, res) => {
+            if (err) {
+                console.log("error in insertAccount", err);
+                done("error");
+            } else {
+                done({body: "ok"});
+            }
+        });
+    }
 }
