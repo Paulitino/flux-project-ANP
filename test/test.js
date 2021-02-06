@@ -10,7 +10,7 @@ describe("Server!", () => {
     .request(app)
     .get("/")
     .end((err, res) => {
-      if (err) return done(err);
+      if (err) done(err);
       expect(res).to.have.status(200);
       done();
     });
@@ -20,7 +20,7 @@ describe("Server!", () => {
     .request(app)
     .get("/items")
     .end(function (err, res) {
-      if (err) return done(err);
+      if (err) done(err);
       expect(res).to.have.status(200);
       done();
     });
@@ -30,7 +30,7 @@ describe("Server!", () => {
     .request(app)
     .get("/flux")
     .end(function (err, res) {
-      if (err) return done(err);
+      if (err) done(err);
       expect(res).to.have.status(200);
       done();
     });
