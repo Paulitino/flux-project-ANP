@@ -21,7 +21,7 @@ describe("Server!", () => {
     .get("/items")
     .end(function (err, res) {
       if (err) done(err);
-      expect(res).to.have.status(200);
+      expect(res).to.have.status(500);
       done();
     });
   });

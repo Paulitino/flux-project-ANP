@@ -36,12 +36,12 @@ app.get('/flux', function(request, response) {
 app.get('/items', function(request, response) {
     db.getAllFluxItems(function(done) {
         if (done == "error") {
-            return response.status(500);
+            response.status(500);
         } else {
             const model = {
                 items: done.body
             }
-            return response.status(200).render("items.hbs", model);
+            response.status(200).render("items.hbs", model);
         }
     });
 });
