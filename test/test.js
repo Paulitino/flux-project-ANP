@@ -10,9 +10,9 @@ describe("Server!", () => {
     .request(app)
     .get("/")
     .end((err, res) => {
-      if (err) return done(err);
+      if (err) done(err);
       expect(res).to.have.status(200);
-      return done();
+      done();
     });
   });
   it("Getting all items from a flux", done => {
@@ -20,9 +20,9 @@ describe("Server!", () => {
     .request(app)
     .get("/items")
     .end(function (err, res) {
-      if (err) return done(err);
+      if (err) done(err);
       expect(res).to.have.status(200);
-      return done();
+      done();
     });
   });
   it("Getting all flux", done => {
@@ -30,9 +30,9 @@ describe("Server!", () => {
     .request(app)
     .get("/flux")
     .end(function (err, res) {
-      if (err) return done(err);
+      if (err) done(err);
       expect(res).to.have.status(200);
-      return done();
+      done();
     });
   });
 });
