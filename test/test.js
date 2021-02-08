@@ -11,8 +11,10 @@ describe("Server!", () => {
     .get("/")
     .end((err, res) => {
       if (err) done(err);
-      expect(res).to.have.status(200);
-      done();
+      else {
+        expect(res).to.have.status(200);
+        done();
+      }
     });
   });
   it("Getting all items from a flux", done => {
@@ -21,8 +23,11 @@ describe("Server!", () => {
     .get("/items")
     .end(function (err, res) {
       if (err) done(err);
-      expect(res).to.have.status(500);
-      done();
+      else {
+        expect(res).to.have.status(200);
+        expect(res.body.model).to.be.an('array');
+        done();
+      }
     });
   });
   it("Getting all flux", done => {
