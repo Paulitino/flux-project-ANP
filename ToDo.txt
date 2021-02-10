@@ -15,6 +15,7 @@
 ------*** TODO ***------
 
 + Takes longer than I thought
++ Dans table ACCOUNT, mettre adresss mail et PASSWORD
 + page de connexion
 + email ?
 + page inscription en cours
