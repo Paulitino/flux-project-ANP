@@ -2,6 +2,8 @@ CREATE TABLE ACCOUNTS(
     ID                    SERIAL
   , FIRSTNAME             VARCHAR(256)  NOT NULL
   , LASTNAME              VARCHAR(256)  NOT NULL
+  , EMAIL                 VARCHAR(256)  NOT NULL
+  , PASSWORD              VARCHAR(256)  NOT NULL
   , BIRTHDATE             TIMESTAMP
   , COMPANY               VARCHAR(256)
   , COUNTRY               VARCHAR(256)

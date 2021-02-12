@@ -46,6 +46,80 @@ app.get('/items', function(request, response) {
     });
 });
 
+app.get('/login', function(request, response) {
+    const model = {
+        firstName: "",
+        password: ""
+     };
+
+    response.status(200).render('login.hbs', model);
+});
+
+app.post('/login', function(request, response) {
+    console.log(request.body.Email)
+    const model = {
+        Email: request.body.Email,
+        password: request.body.password,
+        errors: []
+    };
+
+    const regMail = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
+    let checkMail = regMail.test(model.Email);
+
+    if (request.session.connected == true) {
+        response.redirect('/account')
+    } else if (!checkMail) {
+        errors = ["username or password format is invalid"];
+        const model = {
+            errors: errors,
+        }
+
+        response.render("login.hbs", model);
+    } else {
+        db.getLogin(model, function(done) {
+            if (done.status === 204) {
+                errors = ["username or password invalid"];
+                const model = {
+                    errors: errors,
+                }
+
+                response.render("login.hbs", model);
+            } else if (done == "error") {
+                errors = ["Something bad happened, please try again"]
+                const model = {
+                    errors: errors,
+                }
+
+                response.status(500).render('login.hbs', model);
+            } else {
+                bcrypt.compare(model.password, done.body.password, function (err, res){
+                    if (err) {
+                        errors = ["Something bad happened, please try again"]
+                        const model = {
+                            errors: errors,
+                        }
+
+                        response.status(500).render('login.hbs', model);
+                    } else if (res == true) {
+                        console.log(done);
+                        session = request.session;
+                        session.Email = model.Email;
+                        session.connected = true;
+                        response.redirect('/account');
+                    } else {
+                        errors = ["username or password invalid"];
+                        const model = {
+                            errors: errors,
+                        }
+                    
+                        response.render("login.hbs", model);
+                    }
+                });
+            }
+        });
+    }
+});
+
 app.get('/subscribe', function(request, response) {
     const model = {
        firstName: "",
@@ -62,11 +136,14 @@ app.post('/subscribe', function(request, response) {
     console.log("request", request.body);
     const firstName = request.body.firstName;
     const lastName = request.body.lastName;
+    const Email = request.body.Email;
     const password = request.body.password;
     const passwordConfirm = request.body.passwordConfirm;
     const birthday = request.body.birthday;
     const company = request.body.company;
     const country = request.body.country;
+    const regMail = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
+    let checkMail = regMail.test(Email);
 
     if (password != passwordConfirm) {
         errors = ["Password and confirmation password are not the same"]
@@ -74,18 +151,20 @@ app.post('/subscribe', function(request, response) {
             errors: errors,
             firstName: firstName,
             lastName: lastName,
+            Email: Email,
             birthday: birthday,
             company: company,
             country: country
         }
 
         response.render("subscribe.hbs", model)
-    } else if (password == "") {
-        errors = ["username or password invalid"]
+    } else if (password == "" || checkMail == false) {
+        errors = ["username or password format is invalid"]
         const model = {
             errors: errors,
             firstName: firstName,
             lastName: lastName,
+            Email: Email,
             birthday: birthday,
             company: company,
             country: country
@@ -94,17 +173,17 @@ app.post('/subscribe', function(request, response) {
         response.render("subscribe.hbs", model)
     } else {
         const user = {
-            firstName: firstName,
-            lastName: lastName
+            Email: Email,
         };
         db.getAccount(user, function(done) {
             console.log("getAccountAPI   ", done, done.body.length)
             if (done.body.length != 0) {
-                errors = ["username already exists"]
+                errors = ["Email already exists"]
                 const model = {
                     errors: errors,
                     firstName: firstName,
                     lastName: lastName,
+                    Email: Email,
                     birthday: birthday,
                     company: company,
                     country: country
@@ -117,10 +196,11 @@ app.post('/subscribe', function(request, response) {
                         response.redirect("/accounts/subscribe")
                     } else {
         
-                        const hashpw = hash;
                         const model = {
                             firstName: firstName,
                             lastName: lastName,
+                            Email: Email,
+                            password: hash,
                             birthday: birthday,
                             company: company,
                             country: country

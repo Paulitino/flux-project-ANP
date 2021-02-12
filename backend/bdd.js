@@ -70,6 +70,23 @@ module.exports = {
         });
     },
 
+    getLogin: function(variables, done) {
+        client.query(named(query.getLogin)(variables), (err, res) => {
+            if (err) {
+                console.log("error in getLogin");
+                done("error");
+            } else {
+                console.log("getLogin req = ", res.rows.length);
+                if (res.rows.length == 0) {
+                    console.log("204")
+                    done({status: 204});
+                } else {
+                    done({status: 200, body: res.rows[0]});
+                }
+            }
+        });
+    },
+
     insertFluxItem: function(variables, done) {
         console.log("in insertFluxItem = ", variables);
         client.query(named(query.insertFluxItem)(variables), (err, res) => {

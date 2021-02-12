@@ -1,12 +1,13 @@
 {
     "try": "SELECT NOW()",
-    "getAccount": "SELECT * FROM accounts WHERE firstname = :firstName AND lastname = :lastName LIMIT 1",
+    "getAccount": "SELECT * FROM accounts WHERE Email = :Email LIMIT 1",
     "getAllFlux": "SELECT * FROM flux",
     "getAllFluxItems": "SELECT * FROM fluxitems",
     "getLastItemFromAFlux": "SELECT * from fluxitems WHERE link = $1 ORDER BY isodate DESC LIMIT 1",
+    "getLogin": "SELECT password FROM accounts WHERE email = :Email LIMIT 1",
     "insertFluxItem": "INSERT INTO fluxitems (flux, title, link, description, publication, guid, isodate) VALUES (:flux, :title, :link, :description, :publication, :guid, :isodate)",
     "insertFlux": "INSERT INTO flux (name, url) VALUES (:name, :url)",
-    "insertAccount": "INSERT INTO accounts (firstname, lastname, birthdate, company, country) VALUES (:firstName, :lastName, :birthday, :company, :country)",
+    "insertAccount": "INSERT INTO accounts (firstname, lastname, email, password, birthdate, company, country) VALUES (:firstName, :lastName, :Email, :password, :birthday, :company, :country)",
     "insertSubscriptions": "INSERT INTO subscriptions (account, flux) VALUES (:account, :flux)",
     "insertFavorite": "INSERT INTO favorite (account, fluxitem) VALUES (:account, :fluxitem)",
     "insertDeleted": "INSERT INTO deleted (account, fluxitem) VALUES (:account, :fluxitem)"
