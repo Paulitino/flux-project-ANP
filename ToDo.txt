@@ -11,12 +11,12 @@
 + queries et conf dans json à part - DONE
 + table users BDD - DONE
 + afficher les items d'un flux - DONE
++ Dans table ACCOUNT, mettre adresss mail et PASSWORD - DONE
++ page de connexion - DONE
 
 ------*** TODO ***------
 
-+ Dans table ACCOUNT, mettre adresss mail et PASSWORD
-+ page de connexion
-+ email ?
++ Bien séparer les routes, les fonctions etc
 + page inscription en cours
 + page de profil
 + ajouter un flux
