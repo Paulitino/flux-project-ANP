@@ -16,19 +16,20 @@
 
 ------*** TODO ***------
 
-+ Bien séparer les routes, les fonctions etc
-+ page inscription en cours
+__ROUTES RESTANTES__
 + page de profil
 + ajouter un flux
 + supprimer un flux
 + liste favoris
 + liste supprimés
+
++ Bien séparer les routes, les fonctions etc
 + flux.js générique
 + Bien établir un modèle de données, Avoir une bonne API Sécure / Accessibilité des données faciles et sécure / Générique (transfert de données sans avoir à connaître sa forme)
 
 + décider du design des != pages (infos/UX)
 + Lister en haut toutes les compétences apprises grâce à ce projet
-+ Installer et faire README pour la partie FrontEnd avec NODEJS ReactApp
++ Installer et faire README pour la partie FrontEnd avec NODEJS ReactApp mais d'abord Angular
 + Versionner les API et en suivant tuto ex: 
 -> https://restfulapi.net/rest-api-design-tutorial-with-example/
 -> https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/
