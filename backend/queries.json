@@ -1,5 +1,4 @@
 {
-    "try": "SELECT NOW()",
     "getAccount": "SELECT * FROM accounts WHERE Email = :Email LIMIT 1",
     "getAllFlux": "SELECT * FROM flux",
     "getAllFluxItems": "SELECT * FROM fluxitems",

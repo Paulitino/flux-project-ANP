@@ -15,11 +15,6 @@ app.use(session({secret: "chocapic", resave: false, saveUninitialized: true}));
 
 app.engine('hbs', expressHandlebars({defaultLayout: 'main.hbs',}));
 
-app.get('/', function(request, response) {
-    db.try();
-    response.status(200).render("home.hbs");
-});
-
 app.get('/flux', function(request, response) {
     db.getAllFlux(function(done) {
         if (done == "error") {

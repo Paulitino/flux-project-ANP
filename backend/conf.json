@@ -2,9 +2,10 @@
     "database": {
         "postgres": {
             "user":     "postgres",
-            "name":     "flux",
+            "database": "flux",
             "password": "root",
-            "port":      5432
+            "host":     "fluxBack",
+            "port":     "5432"
         }
     }
 }

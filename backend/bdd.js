@@ -4,11 +4,11 @@ const conf = require("./conf.json");
 const query = require("./queries.json");
 
 const client = new Pool({
-    user:     "postgres",
-    database: "flux",
-    password: "root",
-    host:     "fluxBack",
-    port:     "5432"
+    user: conf.database.postgres.user,
+    database: conf.database.postgres.database,
+    password: conf.database.postgres.password,
+    host: conf.database.postgres.host,
+    port: conf.database.postgres.port,
 });
 
 client.connect();

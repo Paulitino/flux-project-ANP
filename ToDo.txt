@@ -23,6 +23,8 @@ __ROUTES RESTANTES__
 + liste favoris
 + liste supprimés
 
++ Voir JWT
+
 + Bien séparer les routes, les fonctions etc
 + flux.js générique
 + Bien établir un modèle de données, Avoir une bonne API Sécure / Accessibilité des données faciles et sécure / Générique (transfert de données sans avoir à connaître sa forme)
