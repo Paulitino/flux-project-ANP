@@ -1,20 +1,6 @@
 const db = require('./bdd');
 const Parser = require('rss-parser');
 
-/* app.post('/deleteItemById', function (req, res) {
-    console.log("deleteItemById");
-    console.log("req.body.id", req.body.fluxItem);
-
-    db.deleteItemRequest(req.body.fluxItem, function (response) {
-        if (response == "error") {
-            res.status(400);
-        } else {
-            console.log("deleted");
-            res.status(200).json({ ok: "ok" });
-        }
-    });
-}); */
-
 let parser = new Parser();
 
 (async () => {
@@ -57,6 +43,7 @@ let parser = new Parser();
                 console.log("variables = ", variables)
                 db.insertFluxItem(variables, (res) => {
                     console.log("res from insertFluxItem = ", res);
+                    return process.exit(1);
                 });
             }
         }
