@@ -25,7 +25,9 @@ describe("Server!", () => {
       if (err) done(err);
       else {
         expect(res).to.have.status(200);
-        expect(res.body.model).to.be.an('array');
+        expect(res).to.have.header('content-type', 'text/html; charset=utf-8'); 
+        expect(res.text).to.contain('Express');
+        //expect(res.body.model).to.be.an('array');
         done();
       }
     });
