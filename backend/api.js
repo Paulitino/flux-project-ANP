@@ -36,7 +36,7 @@ app.get('/items', function(request, response) {
             const model = {
                 items: done.body
             }
-            response.status(200).render("items.hbs", model);
+            response.status(200).send(model);
         }
     });
 });
