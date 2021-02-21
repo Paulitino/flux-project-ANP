@@ -1,5 +1,10 @@
 # Flux project
 
+This project is inspired from a test I made for a company.
+It is about getting articles from flux the user has subscribed to. It will automatically get the articles in an interval of time the user has set.
+
+
+## Technologies
 
 ###### Explaination of the *docker containter run/exec* flags
 
