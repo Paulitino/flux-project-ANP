@@ -5,6 +5,9 @@ It is about getting articles from flux the user has subscribed to. It will autom
 
 
 ## Technologies
+Angular
+NodeJS
+PostgreSQL
 
 ###### Explaination of the *docker containter run/exec* flags
 
