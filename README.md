@@ -3,11 +3,18 @@
 This project is inspired from a test I made for a company.
 It is about getting articles from flux the user has subscribed to. It will automatically get the articles in an interval of time the user has set.
 
+## Lessons learned
 
 ## Technologies
-Angular
-NodeJS
-PostgreSQL
+
+### Angular 2+
+It is an open-source web application framework created by google.It uses the TypeScript language to develop applications based on the MVC architecture.
+
+### NodeJS
+Is a back-end JavaScript environment. Allows user to write JavaScript tools and commands for server-side scripting.
+
+### PostgreSQL
+Free open-source relational database management system. The language used is SQL.
 
 ###### Explaination of the *docker containter run/exec* flags
 
