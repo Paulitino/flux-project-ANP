@@ -15,7 +15,7 @@ Is a back-end JavaScript environment. Allows user to write JavaScript tools and 
 Free open-source relational database management system. The language used is SQL.
 
 ## Lessons learned
-During this project, I have learned that 
+During this project, I have learned to use docker on a personnal project but also I took good habits like testing.
 
 ###### Explaination of the *docker containter run/exec* flags
 
