@@ -3,8 +3,6 @@
 This project is inspired from a test I made for a company.
 It is about getting articles from flux the user has subscribed to. It will automatically get the articles in an interval of time the user has set.
 
-## Lessons learned
-
 ## Technologies
 
 ### Angular 2+
@@ -15,6 +13,9 @@ Is a back-end JavaScript environment. Allows user to write JavaScript tools and 
 
 ### PostgreSQL
 Free open-source relational database management system. The language used is SQL.
+
+## Lessons learned
+During this project, I have learned that 
 
 ###### Explaination of the *docker containter run/exec* flags
 
