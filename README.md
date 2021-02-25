@@ -1,9 +1,21 @@
 # Flux project
 
+This README.md is divided in many parts.
+## Table of contents
+* [Why this project]
+* [Lesson learned](#Lessons-learned)
+* [Technologies](#Technologies)
+* [Launch project]
+
 This project is inspired from a test I made for a company.
 It is about getting articles from flux the user has subscribed to. It will automatically get the articles in an interval of time the user has set.
 
+## Lessons learned
+During this project, I have learned to use docker on a personnal project, but also testing the code I developed. The SQL statements are optimised like I learned during my internship at SFR B2B.
+
 ## Technologies
+
+### Docker
 
 ### Angular 2+
 It is an open-source web application framework created by google.It uses the TypeScript language to develop applications based on the MVC architecture.
@@ -11,11 +23,10 @@ It is an open-source web application framework created by google.It uses the Typ
 ### NodeJS
 Is a back-end JavaScript environment. Allows user to write JavaScript tools and commands for server-side scripting.
 
+### Mocha-chai
+
 ### PostgreSQL
 Free open-source relational database management system. The language used is SQL.
-
-## Lessons learned
-During this project, I have learned to use docker on a personnal project but also I took good habits like testing.
 
 ###### Explaination of the *docker containter run/exec* flags
 
