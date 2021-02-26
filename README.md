@@ -2,31 +2,22 @@
 
 This README.md is divided in many parts.
 ## Table of contents
-* [Why this project]
+* [Why this project](#Why-this-project)
 * [Lesson learned](#Lessons-learned)
 * [Technologies](#Technologies)
-* [Launch project]
+* [Setup the project](#Setup-the-project)
 
+## Why this project
 This project is inspired from a test I made for a company.
 It is about getting articles from flux the user has subscribed to. It will automatically get the articles in an interval of time the user has set.
 
 ## Lessons learned
-During this project, I have learned to use docker on a personnal project, but also testing the code I developed. The SQL statements are optimised like I learned during my internship at SFR B2B.
+During this project, I have learned to use docker on a personnal project, but also testing the code I developed. The SQL statements are optimised like I learned during my internship at SFR B2B.</br>
+It has the purpose to assemble many technologies I know in a cleaner way and with good practices.
 
 ## Technologies
 
 ### Docker
-
-### Angular 2+
-It is an open-source web application framework created by google.It uses the TypeScript language to develop applications based on the MVC architecture.
-
-### NodeJS
-Is a back-end JavaScript environment. Allows user to write JavaScript tools and commands for server-side scripting.
-
-### Mocha-chai
-
-### PostgreSQL
-Free open-source relational database management system. The language used is SQL.
 
 ###### Explaination of the *docker containter run/exec* flags
 
@@ -38,6 +29,17 @@ Flag | Description
 --network | Connect a container to a network
 --name | Assign a name to the container
 --tty , -t | Allocate a pseudo-TTY
+
+### Angular 2+
+It is an open-source web application framework created by google.It uses the TypeScript language to develop applications based on the MVC architecture.
+
+### NodeJS
+Is a back-end JavaScript environment. Allows user to write JavaScript tools and commands for server-side scripting.
+
+### Mocha-chai
+
+### PostgreSQL
+Free open-source relational database management system. The language used is SQL.
 
 ## Setup the project
 First, you have to download and install **Docker**.
@@ -97,4 +99,4 @@ npm install
 > To connect the webservices API to the DB postgreSQL you have to instanciate a client with many credentials. The "host" is the name of the container to "attack" where the postgres DB is. In our case it is "fluxBack"
 
 **Frontend**<br>
-TODO
+The front-end part is in another repository, so it is better to maintain and the project is divided in logic parts(I might want to try another front-end framework).
