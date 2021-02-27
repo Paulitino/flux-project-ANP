@@ -16,7 +16,7 @@ During this project, I have learned to use docker on a personnal project, but al
 It has the purpose to assemble many technologies I know in a cleaner way and with good practices.
 
 ## Technologies
-
+---*** Introduction TODO ***---
 ### Docker
 
 ###### Explaination of the *docker containter run/exec* flags
@@ -36,12 +36,19 @@ It is an open-source web application framework created by google.It uses the Typ
 ### NodeJS
 Is a back-end JavaScript environment. Allows user to write JavaScript tools and commands for server-side scripting.
 
-### Mocha-chai
+### Mocha
+JavaScript test framework running on NodeJS to test asynchronous simpler and make it funnier.
+
+### Chai
+BDD (Behaviour Driven Development) or a TDD (Test Driven Development) for NodeJS
 
 ### PostgreSQL
 Free open-source relational database management system. The language used is SQL.
 
 ## Setup the project
+
+### Requirements
+---*** Requirements TODO ***---
 First, you have to download and install **Docker**.
 
 This commands creates a volume
