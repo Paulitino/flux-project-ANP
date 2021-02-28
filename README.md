@@ -10,13 +10,16 @@ This README.md is divided in many parts.
 ## Why this project
 This project is inspired from a test I made for a company.
 It is about getting articles from flux the user has subscribed to. It will automatically get the articles in an interval of time the user has set.
+&nbsp;&nbsp;&nbsp;&nbsp;As a fullstack developper, I like to control and understand all the parts of a project. For this project I decided to use technologies I know but in a more optimised/professionnal way. The purpose is to keep good practices and implement useful technologies in companies to show what I am capable of in a professionnal-like project.
 
 ## Lessons learned
 During this project, I have learned to use docker on a personnal project, but also testing the code I developed. The SQL statements are optimised like I learned during my internship at SFR B2B.</br>
 It has the purpose to assemble many technologies I know in a cleaner way and with good practices.
 
 ## Technologies
----*** Introduction TODO ***---
+**Introduction TODO**
+For this project I decided to use Angular, HTML, CSS for the front-end part. NodeJS, PostgreSQL for the back-end part. I chose to develop in a docker environment, it allows all the developers to be able to destroy and rebuild easily the whole architecture of the project if a problem occurs. Moreover, since everybody has exactly the same stack, versions of technologies... If anyone has a problem somebody had the same.
+The second improvment is the tests. I decided to use Mocha Chai because the community seems active and there are a lot of example. These technologies are good together and are used a lot.
 ### Docker
 
 ###### Explaination of the *docker containter run/exec* flags
