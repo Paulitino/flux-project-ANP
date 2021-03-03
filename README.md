@@ -13,7 +13,12 @@ It is about getting articles from rss-flux the user has subscribed to. It will a
 As a fullstack developper, I like to control and understand all the parts of a project. For this project I decided to use technologies I know, but in a more optimised/professionnal way. The purpose is to keep good practices and implement technologies used a lot in companies to show what I am able to do in a professionnal-like project.
 
 ## Lessons learned
-During this project, I have learned to use docker on a personnal project, but also testing the code I developed. The SQL statements are optimised like I learned during my internship at SFR B2B.</br>
+During this project, I have learned a lot:
+- How to use docker on a personnal project
+- Testing the code I developed
+- The SQL statements are optimised 
+- How to do a good Readme.md
+These are requirements to do a good project I've learned during my internship at SFR B2B.</br>
 It has the purpose to assemble many technologies I know in a cleaner way and with good practices.
 
 ## Technologies
