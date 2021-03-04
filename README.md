@@ -15,11 +15,13 @@ As a fullstack developper, I like to control and understand all the parts of a p
 ## Lessons learned
 During this project, I have learned a lot:
 - How to use docker on a personnal project
-- Testing the code I developed
+- Testing the code I developed using for the first time mocha and chai
 - The SQL statements are optimised 
 - How to do a good Readme.md
+- TypeScript's optionnal chaining
+- TypeScript non-null assertion operator
 These are requirements to do a good project I've learned during my internship at SFR B2B.</br>
-It has the purpose to assemble many technologies I know in a cleaner way and with good practices.
+It has the purpose to assemble many technologies I know with good practices and in a cleaner way.
 
 ## Technologies
 For this project I decided to use Angular, HTML, CSS for the front-end part. NodeJS, PostgreSQL for the back-end part. I chose to develop in a docker environment, it allows all the developers to be able to destroy and rebuild easily the whole architecture of the project if a problem occurs. Moreover, since everybody has exactly the same stack, versions of technologies... If anyone has a problem somebody had the same.</br>
