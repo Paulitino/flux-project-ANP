@@ -115,6 +115,16 @@ Installs all the modules
 npm install
 ```
 
+Starts the project
+```
+npm start
+```
+
+Tests the project
+```
+npm test
+```
+
 > To connect the webservices API to the DB postgreSQL you have to instanciate a client with many credentials. The "host" is the name of the container to "attack" where the postgres DB is. In our case it is "fluxBack"
 
 **Frontend**<br>
