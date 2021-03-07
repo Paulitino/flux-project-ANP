@@ -24,7 +24,7 @@ These are requirements to do a good project I've learned during my internship at
 It has the purpose to assemble many technologies I know with good practices and in a cleaner way.
 
 ## Technologies
-For this project I decided to use Angular, HTML, CSS for the front-end part. NodeJS, PostgreSQL for the back-end part. I chose to develop in a docker environment, it allows all the developers to be able to destroy and rebuild easily the whole architecture of the project if a problem occurs. Moreover, since everybody has exactly the same stack, versions of technologies... If anyone has a problem somebody had the same.</br>
+For this project I decided to use Angular, HTML, CSS for the front-end part. NodeJS, PostgreSQL for the back-end part. I chose to develop in a docker environment, it allows all the developers to be able to destroy and rebuild easily the whole architecture of the project if a problem occurs. Moreover, since everybody has exactly the same stack, versions of technologies... If anyone has a problem somebody had it before or everybody has the same.</br>
 The second improvment is the tests. I decided to use Mocha Chai because the community seems active and there are a lot of example. These technologies are good together and are used a lot.
 
 ### Docker
