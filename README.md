@@ -129,4 +129,4 @@ npm test
 
 **Frontend**<br>
 The front-end part is in another repository, so it is better to maintain and the project is divided in logic parts(I might want to try another front-end framework).
-The organization is on the front-end repository
+The organization is on the front-end repository. OMG
